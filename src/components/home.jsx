@@ -10,9 +10,7 @@ class Home extends Component {
     render()
     {
         return <div className="ui container"> 
-        
-                    
-
+                    <h1>Home page</h1>
                 </div>;
     }
 }

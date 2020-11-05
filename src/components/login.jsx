@@ -1,4 +1,5 @@
 import react, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Loader from './Loader';
 import { Grid, Button,Checkbox, Header, Form, Input} from 'semantic-ui-react';
@@ -27,9 +28,9 @@ class Login extends Component
         await axios.post(this.state.url, {
             email : data.login,
             password : data.password
-        }).then(user => {
-
-            console.log(user);
+        }).then(response => {
+            const user = response.data;
+            this.setState({ user })
             return true;
         
         }).catch(error => {
@@ -50,6 +51,7 @@ class Login extends Component
                 if(this.onConnexion(this.state.user))
                 {
                     this.setState({loader : false})
+                    this.props.history.push('/Home');
                 }
                 else
                 {
@@ -107,6 +109,9 @@ class Login extends Component
                                 </Form.Field>
                                 <Button className="ui primary button submit-button" type='submit' onClick={this.onFormSubmit} >Connexion</Button>
                             </Form>
+                            <div className="linkContainer">
+                                <Link className="simpleLink" to="/Register">S'enregistrer</Link>
+                            </div>
                         </Grid.Column>
                         <Grid.Column width={3}></Grid.Column>
                     </Grid.Row>

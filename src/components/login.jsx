@@ -1,8 +1,8 @@
-import react, {Component} from 'react';
+import {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Loader from './Loader';
-import { Grid, Button,Checkbox, Header, Form, Input} from 'semantic-ui-react';
+import { Grid, Button, Header, Form, Input} from 'semantic-ui-react';
 
 class Login extends Component
 {

@@ -1,6 +1,6 @@
 import react, {Component} from 'react';
 
-class Home extends Component {
+class RegisterForm extends Component {
 
     state = 
     {
@@ -11,10 +11,10 @@ class Home extends Component {
     {
         return <div className="ui container"> 
         
-                    
+
 
                 </div>;
     }
 }
 
-export default Home;
+export default RegisterForm;

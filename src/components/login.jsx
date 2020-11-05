@@ -1,5 +1,7 @@
 import react, {Component} from 'react';
-import { Grid, Button,Checkbox, Header, Form, Icon, Input} from 'semantic-ui-react';
+import axios from 'axios';
+import Loader from './Loader';
+import { Grid, Button,Checkbox, Header, Form, Input} from 'semantic-ui-react';
 
 class Login extends Component
 {
@@ -7,15 +9,85 @@ class Login extends Component
     state = 
     {
         user : { login:'', password:''},
-        agreed : false
+        agreed : false,
+        loader :false,
+        error : false,
+        url : "http://localhost:4000/api/auth/login"
+    }
+    handleChange = event =>{
+
+        const { name, value} = event.target; 
+        let form = this.state.user;
+        form[name] = value;
+        this.setState({ form })
+
     }
 
-    
+    onConnexion  = async (data)=>{
+        await axios.post(this.state.url, {
+            email : data.login,
+            password : data.password
+        }).then(user => {
 
+            console.log(user);
+            return true;
+        
+        }).catch(error => {
+
+            console.log(error);
+            return false;
+
+        })
+        
+    }
+
+    onFormSubmit = event =>
+    {
+            event.preventDefault();
+            this.setState({loader : true})
+            if(this.formvalidation())
+            {
+                if(this.onConnexion(this.state.user))
+                {
+                    this.setState({loader : false})
+                }
+                else
+                {
+                    this.setState({loader : false})
+                }
+            }
+            else
+            {
+                
+            }
+    }
+
+    formvalidation = ()=>{
+
+            if(document.getElementsByName("login")[0].value === '' || document.getElementsByName("password")[0].value === '')
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+    }
+
+    clearFormfields = ()=>{
+        this.setState({
+
+            user : {login:"", password:""}
+
+        });
+        document.querySelector(".form").reset();
+
+    }
 
      render()
      {
             return <div className="ui wrapper">
+                { this.state.loader ? <Loader />: ""}
                 <Grid>
                     <Grid.Row>
                         <Grid.Column width={3}> </Grid.Column>
@@ -24,16 +96,16 @@ class Login extends Component
                             <Form>
                                 <Form.Field>
                                     <label>Identifiant</label>
-                                    <Input icon="user" name="login" iconPosition='left' placeholder='dimitrimudia@gmail.com' />
+                                    <Input icon="user" name="login" iconPosition='left' placeholder='dimitrimudia@gmail.com'  onChange ={this.handleChange} />
                                 </Form.Field>
                                 <Form.Field>
                                     <label>Mot de passe</label>
-                                    <Input icon="lock" type="password" name="password" iconPosition='left' placeholder='Mot de passe' />
+                                    <Input icon="lock" type="password" name="password" iconPosition='left' placeholder='Mot de passe'  onChange ={this.handleChange} />
                                 </Form.Field>
                                 <Form.Field>
                                     <Checkbox label='I agree to the Terms and Conditions' />
                                 </Form.Field>
-                                <Button className="ui primary button submit-button" type='submit'>Connexion</Button>
+                                <Button className="ui primary button submit-button" type='submit' onClick={this.onFormSubmit} >Connexion</Button>
                             </Form>
                         </Grid.Column>
                         <Grid.Column width={3}></Grid.Column>

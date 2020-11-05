@@ -1,10 +1,14 @@
 import react, {Component} from 'react';
-import { Grid, Button,Checkbox, Header, Form} from 'semantic-ui-react';
+import { Grid, Button,Checkbox, Header, Form, Icon, Input} from 'semantic-ui-react';
 
 class Login extends Component
 {
     
-
+    state = 
+    {
+        user : { login:'', password:''},
+        agreed : false
+    }
      render()
      {
             return <div className="ui wrapper">
@@ -16,11 +20,11 @@ class Login extends Component
                             <Form>
                                 <Form.Field>
                                     <label>Identifiant</label>
-                                    <input name="login"  placeholder='Identifiant' />
+                                    <Input icon="user" name="login" iconPosition='left' placeholder='dimitrimudia@gmail.com' />
                                 </Form.Field>
                                 <Form.Field>
                                     <label>Mot de passe</label>
-                                    <input name="password"  placeholder='Mot de passe' />
+                                    <Input icon="lock" type="password" name="password" iconPosition='left' placeholder='Mot de passe' />
                                 </Form.Field>
                                 <Form.Field>
                                     <Checkbox label='I agree to the Terms and Conditions' />

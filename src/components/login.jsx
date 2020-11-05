@@ -15,12 +15,12 @@ class Login extends Component
                         <Grid.Column width={10}>
                             <Form>
                             <Form.Field>
-                                <label>First Name</label>
-                                <input placeholder='First Name' />
+                                <label>Login</label>
+                                <input placeholder='Login' />
                                 </Form.Field>
                                 <Form.Field>
-                                <label>Last Name</label>
-                                <input placeholder='Last Name' />
+                                <label>Password</label>
+                                <input type="password" placeholder='Password' />
                                 </Form.Field>
                                 <Form.Field>
                                 <Checkbox label='I agree to the Terms and Conditions' />

@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import Login from './components/login';
 import Home from './components/home';
-import Register from './components/register';
+import RegisterForm from './components/register';
 import Dashboard from './components/dashboard';
 import ErrorPage from './components/ErroPage';
 
@@ -23,7 +23,7 @@ function App() {
           <Router>
             <Switch>
               <Route path ="/" exact component={Login} />
-              <Route path ="/Register" exact component={Register} />
+              <Route path ="/Register" exact component={RegisterForm} />
               <Route path ="/Home" exact component={Home} />
               <Route path ="/Dashboard" exact component={Dashboard} />
               <Route path ="/Error" exact component={ErrorPage} />

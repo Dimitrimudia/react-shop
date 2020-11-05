@@ -34,7 +34,10 @@ class RegisterForm extends Component {
 
     onFormSubmit = ()=>{
 
-        console.log(this.state.user);
+        if(this.formvalidation())
+        {
+                this.onSignup(this.state.user);
+        }
     }
 
     formvalidation = ()=>{
@@ -64,7 +67,7 @@ class RegisterForm extends Component {
                                     </Form.Field>
                                     <Form.Field>
                                         <label>Adrese mail</label>
-                                        <Input icon="at" name="login" iconPosition='left' placeholder='dimitrimudia@gmail.com'  onChange ={this.handleChange} />
+                                        <Input icon="at" name="email" iconPosition='left' placeholder='dimitrimudia@gmail.com'  onChange ={this.handleChange} />
                                     </Form.Field>
                                     <Form.Field>
                                         <label>Mot de passe</label>

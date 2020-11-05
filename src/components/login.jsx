@@ -8,11 +8,11 @@ class Login extends Component
      render()
      {
             return <div className="ui container">
-                <Header as="h4"> Conexion </Header>
                 <Grid>
                     <Grid.Row>
                         <Grid.Column width={3}> </Grid.Column>
                         <Grid.Column width={10}>
+                            <Header as="h4"> Conexion </Header>
                             <Form>
                             <Form.Field>
                                 <label>Login</label>

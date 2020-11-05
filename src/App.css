@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.main.container
+{
+   margin-top: 60px;
+}
+
+.submit-button
+{
+  margin-top: 24px !important;
+  float: right;
+}

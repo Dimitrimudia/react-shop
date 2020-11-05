@@ -4,7 +4,10 @@ import Login from './components/login';
 
 function App() {
   return (
-    <Login /> 
+    <div className="ui container">
+       <Login /> 
+    </div>
+   
   );
 }
 

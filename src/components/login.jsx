@@ -16,11 +16,11 @@ class Login extends Component
                             <Form>
                             <Form.Field>
                                 <label>Login</label>
-                                <input placeholder='Login' />
+                                <input icon='user' iconPosition='left' placeholder='Login' />
                                 </Form.Field>
                                 <Form.Field>
                                 <label>Password</label>
-                                <input type="password" placeholder='Password' />
+                                <input  placeholder='Password' />
                                 </Form.Field>
                                 <Form.Field>
                                 <Checkbox label='I agree to the Terms and Conditions' />

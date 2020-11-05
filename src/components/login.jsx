@@ -104,9 +104,6 @@ class Login extends Component
                                     <label>Mot de passe</label>
                                     <Input icon="lock" type="password" name="password" iconPosition='left' placeholder='Mot de passe'  onChange ={this.handleChange} />
                                 </Form.Field>
-                                <Form.Field>
-                                    <Checkbox label='I agree to the Terms and Conditions' />
-                                </Form.Field>
                                 <Button className="ui primary button submit-button" type='submit' onClick={this.onFormSubmit} >Connexion</Button>
                             </Form>
                             <div className="linkContainer">

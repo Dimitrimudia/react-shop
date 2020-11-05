@@ -9,6 +9,10 @@ class Login extends Component
         user : { login:'', password:''},
         agreed : false
     }
+
+    
+
+
      render()
      {
             return <div className="ui wrapper">

@@ -15,6 +15,7 @@ class Login extends Component
         error : false,
         url : "http://localhost:4000/api/auth/login"
     }
+
     handleChange = event =>{
 
         const { name, value} = event.target; 
@@ -92,8 +93,8 @@ class Login extends Component
                 { this.state.loader ? <Loader />: ""}
                 <Grid>
                     <Grid.Row>
-                        <Grid.Column width={3}> </Grid.Column>
-                        <Grid.Column width={10}>
+                        <Grid.Column width={5}> </Grid.Column>
+                        <Grid.Column width={6}>
                             <Header as="h2"> Se Connecter</Header>
                             <Form>
                                 <Form.Field>
@@ -104,13 +105,16 @@ class Login extends Component
                                     <label>Mot de passe</label>
                                     <Input icon="lock" type="password" name="password" iconPosition='left' placeholder='Mot de passe'  onChange ={this.handleChange} />
                                 </Form.Field>
+                                <Form.Field>
+                                    <div className="linkContainer">
+                                        <Link className="simpleLink" to="/Register">S'enregistrer</Link>
+                                    </div>
+                                </Form.Field>
                                 <Button className="ui primary button submit-button" type='submit' onClick={this.onFormSubmit} >Connexion</Button>
                             </Form>
-                            <div className="linkContainer">
-                                <Link className="simpleLink" to="/Register">S'enregistrer</Link>
-                            </div>
+                           
                         </Grid.Column>
-                        <Grid.Column width={3}></Grid.Column>
+                        <Grid.Column width={5}></Grid.Column>
                     </Grid.Row>
                 </Grid>
             </div>

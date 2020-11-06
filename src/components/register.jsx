@@ -57,8 +57,8 @@ class RegisterForm extends Component {
         return <div className="ui container"> 
                     <Grid>
                         <Grid.Row>
-                            <Grid.Column width={3}> </Grid.Column>
-                            <Grid.Column width={10}>
+                            <Grid.Column width={5}> </Grid.Column>
+                            <Grid.Column width={6}>
                                 <Header as="h2"> S'enregistrer</Header>
                                 <Form>
                                     <Form.Field>
@@ -75,14 +75,14 @@ class RegisterForm extends Component {
                                     </Form.Field>
                                     <Form.Field>
                                         <Checkbox label='I agree to the Terms and Conditions' />
+                                        <div className="linkContainer">
+                                            <Link className="simpleLink" to="/">Se connecter</Link>
+                                        </div>
                                     </Form.Field>
                                     <Button className="ui primary button submit-button" type='submit' onClick={this.onFormSubmit} >S'enregistrer</Button>
                                 </Form>
-                                <div className="linkContainer">
-                                    <Link className="simpleLink" to="/">Se connecter</Link>
-                                </div>
                             </Grid.Column>
-                            <Grid.Column width={3}> </Grid.Column>
+                            <Grid.Column width={5}> </Grid.Column>
                         </Grid.Row>
                     </Grid>
                 </div>;
